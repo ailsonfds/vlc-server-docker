@@ -1,0 +1,17 @@
+version: "3"
+services:
+        vlc:
+                image: vlc-server
+                ports: 
+                        - 8080:8080
+                networks:
+                        - vlc_net
+                deploy:
+                        replicas: 2
+                        update_config:
+                                parallelism: 2
+                                delay: 10s
+
+networks:
+        vlc_net:
+
