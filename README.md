@@ -1,8 +1,9 @@
-# VLC Server Docker image
+# VLC Server Docker image with docker swarm
 
 ## Build and run as
 
 ```bash
+docker swarm init
 docker build -t vlc-server .
-docker run -d --rm -p 8080:8080 -v $(pwd)/media/:/opt/vlc-media --name vlc_server vlc-server
+docker stack deploy -c vlc-compose.yaml vlc
 ```
