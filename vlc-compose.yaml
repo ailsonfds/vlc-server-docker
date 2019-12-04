@@ -4,14 +4,12 @@ services:
                 image: vlc-server
                 ports: 
                         - 8080:8080
+                        - 8554:8554
                 networks:
                         - vlc_net
-                deploy:
-                        replicas: 2
-                        update_config:
-                                parallelism: 2
-                                delay: 10s
-
+                volumes:
+                        - vlc:/opt/vlc-media/              
 networks:
         vlc_net:
-
+volumes:
+        vlc:
