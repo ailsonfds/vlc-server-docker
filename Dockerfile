@@ -18,4 +18,4 @@ EXPOSE 8554
 
 RUN chown vlcuser:vlcuser -R /opt/vlc-media
 
-ENTRYPOINT /usr/bin/sudo su - vlcuser -c "cvlc -I http --http-host 0.0.0.0 --http-port 8080 --http-src=/opt/vlc-media --http-password senha123 -vvv --file-logging --logmode=text --logfile=/opt/vlc-media/vlclog.txt"
+ENTRYPOINT /usr/bin/sudo su - vlcuser -c "cvlc -vvv /opt/vlc-media/python.mp4 --sout '#transcode{vcodec=h264,acodec=mpga,ab=128,channels=2,samplerate=44100}:rtp{sdp=rtsp://:8554/}'"
