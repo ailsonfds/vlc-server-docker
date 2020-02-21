@@ -18,4 +18,4 @@ EXPOSE 8554
 
 RUN chown vlcuser:vlcuser -R /opt/vlc-media
 
-ENTRYPOINT /usr/bin/sudo su - vlcuser -c "cvlc -vvv /opt/vlc-media/python.mp4 --sout '#transcode{vcodec=h264,acodec=mpga,ab=128,channels=2,samplerate=44100}:rtp{sdp=rtsp://:8554/}'"
+ENTRYPOINT ["/use/bin/sudo","su","-","vlcuser",...]
