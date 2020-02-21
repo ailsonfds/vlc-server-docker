@@ -6,7 +6,7 @@ RUN apt-get install vlc sudo -qqy
 
 RUN mkdir -p /opt/vlc-media
 
-COPY ./media/* /opt/vlc-media/
+#COPY ./media/* /opt/vlc-media/
 
 RUN useradd vlcuser -M -d /opt/vlc-media -r -U
 
