@@ -18,4 +18,4 @@ EXPOSE 8554
 
 RUN chown vlcuser:vlcuser -R /opt/vlc-media
 
-ENTRYPOINT ["/use/bin/sudo","su","-","vlcuser",...]
+ENTRYPOINT ["/usr/bin/sudo","su","-","vlcuser","-c"]
