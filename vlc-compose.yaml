@@ -9,5 +9,7 @@ services:
                         - vlc_net
                 command:
                         - cvlc -vvv /opt/vlc-media/python.mp4 --sout '#transcode{vcodec=h264,acodec=mpga,ab=128,channels=2,samplerate=44100}:rtp{sdp=rtsp://:8554/}'        
+                volumes:
+                        - /home/vitor/vlc-server-docker/media:/opt/vlc-media/ # o caminho onde está os arquivos de video
 networks:
         vlc_net:
